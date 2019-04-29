@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/elastic/elasticsearch-ruby.git
+  revision: 31ff75a3b9eaeaa770663a68e005a45c2259f1b4
+  specs:
+    elasticsearch-api (7.0.0.pre)
+      multi_json
+    elasticsearch-dsl (0.1.7)
+    elasticsearch-transport (7.0.0.pre)
+      faraday
+      multi_json
+
+GIT
   remote: https://github.com/elasticsearch/elasticsearch-rails.git
   revision: 3e100395cb6be25d4cc5f032ce219ad8e7eb2411
   specs:
@@ -15,11 +26,6 @@ GIT
     elasticsearch (7.0.0.pre)
       elasticsearch-api (= 7.0.0.pre)
       elasticsearch-transport (= 7.0.0.pre)
-    elasticsearch-api (7.0.0.pre)
-      multi_json
-    elasticsearch-transport (7.0.0.pre)
-      faraday
-      multi_json
 
 GEM
   remote: https://rubygems.org/
@@ -243,6 +249,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   elasticsearch!
+  elasticsearch-dsl!
   elasticsearch-model!
   elasticsearch-rails!
   jbuilder (~> 2.5)
