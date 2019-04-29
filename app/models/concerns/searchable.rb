@@ -27,7 +27,7 @@ module Searchable
 
     # Set up index configuration and mapping
     #
-    settings index: { number_of_shards: 1, number_of_replicas: 0 } do
+    settings File.open('config/elasticsearch/articles_settings.json') do
       mapping do
         indexes :title, type: 'text' do
           indexes :title,     analyzer: 'snowball'
