@@ -37,3 +37,10 @@ to a category, has many authors and comments.
 * A Rails initializer is added to customize the Elasticsearch client configuration
 * Seed script and example data from New York Times is added
 
+
+## [4] DSL
+
+The `dsl` template refactors the search definition in SearchController#index
+to use the [`elasticsearch-dsl`](https://github.com/elastic/elasticsearch-ruby/tree/dsl/elasticsearch-dsl)
+Rubygem for better expresivity and readability of the code.
+
