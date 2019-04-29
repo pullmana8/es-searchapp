@@ -81,7 +81,7 @@ class SearchControllerTest < ActionController::TestCase
     assert_equal 'one', suggestions['suggest_title'][0]['text']
   end
 
-  test "should return facets" do
+  test "should return aggregations" do
     get :index, params: { q: 'one' }
     assert_response :success
 
@@ -91,10 +91,11 @@ class SearchControllerTest < ActionController::TestCase
     assert_equal 2, aggregations['authors']['authors']['buckets'].size
     assert_equal 2, aggregations['published']['published']['buckets'].size
 
-    assert_equal 'One', aggregations['categories']['categories']['buckets'][0]['key']
     assert_equal 'John Smith', aggregations['authors']['authors']['buckets'][0]['key']
-    assert_equal 1425254400000, aggregations['published']['published']['buckets'][0]['key']
+    assert_equal 'One', aggregations['categories']['categories']['buckets'][0]['key']
+    assert_equal '2015-03-02T00:00:00.000Z', aggregations['published']['published']['buckets'][0]['key_as_string']
   end
+
 
   test "should sort on the published date" do
     get :index, params: { q: 'one', s: 'published_on' }
@@ -131,6 +132,7 @@ class SearchControllerTest < ActionController::TestCase
     assert_equal 2, aggregations['categories']['categories']['buckets'].size
   end
 
+
   test "should filter search results and the category and published date facets when user selects a category" do
     get :index, params: { q: 'one', a: 'Mary Smith' }
     assert_response :success
@@ -145,4 +147,5 @@ class SearchControllerTest < ActionController::TestCase
     # Do NOT filter the authors facet
     assert_equal 2, aggregations['authors']['authors']['buckets'].size
   end
+
 end
