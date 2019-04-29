@@ -44,3 +44,9 @@ The `dsl` template refactors the search definition in SearchController#index
 to use the [`elasticsearch-dsl`](https://github.com/elastic/elasticsearch-ruby/tree/dsl/elasticsearch-dsl)
 Rubygem for better expresivity and readability of the code.
 
+
+## [5] Settings Files
+
+The `settings-files` template refactors the `Searchable` module to load the index settings
+from an external file.
+
