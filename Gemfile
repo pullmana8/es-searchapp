@@ -45,7 +45,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console', '>= 3.7.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -54,16 +54,16 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 3.18.0'
   gem 'selenium-webdriver'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'thin'
+gem 'thin', '>= 1.7.2'
 gem 'mocha', group: 'test'
-gem 'rails-controller-testing', group: 'test'
+gem 'rails-controller-testing', '>= 1.0.4', group: 'test'
 
 # NOTE: Kaminari has to be loaded before Elasticsearch::Model so the callbacks are executed
 gem 'kaminari'
@@ -73,5 +73,5 @@ gem 'elasticsearch-model', git: 'https://github.com/elasticsearch/elasticsearch-
 gem 'elasticsearch-rails', git: 'https://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'oj'
 gem 'pry', group: 'development'
-gem 'sidekiq'
+gem 'sidekiq', '>= 5.2.7'
 gem 'elasticsearch-dsl', git: 'git://github.com/elastic/elasticsearch-ruby.git'
