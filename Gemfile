@@ -66,7 +66,7 @@ gem 'mocha', group: 'test'
 gem 'rails-controller-testing', group: 'test'
 
 # NOTE: Kaminari has to be loaded before Elasticsearch::Model so the callbacks are executed
-gem 'kaminari'
+gem 'kaminari', '>= 1.2.1'
 
 gem 'elasticsearch', git: 'https://github.com/elasticsearch/elasticsearch-ruby.git'
 gem 'elasticsearch-model', git: 'https://github.com/elasticsearch/elasticsearch-rails.git'
